@@ -74,20 +74,20 @@ Example of a tree node:
 
 
   2. Breadth-first search (BFS)
-    - Goes across each level from left to right, visiting each node at that level, before going down.
-    - Each node contains the references to its left and right child. To enable breadth traversal, you have to ask each parent node to give you the references (discovered nodes) before you start moving to its left child, or else you won't know where to find the right child. 
-    - Big(O):
-      - Time complexity is linear time `O(n)` since we only visit each node in the queue once, so the total amount of time is proprotional to the number of nodes in the queue.
-      - Space complexity is proportional to the max width of the tree `O(w)`
-    - Uses:
-      - Finding the shortest path between two nodes, GPS navigation, peer2peer networks, social networks etc. that all require you to find neighbouring nodes.
-      - Also useful if you have a lot of data but are not exactly sure where the node you're looking for is located. You could begin with BFS to explore and once you find the right "neighbourhood", use DFS to retrieve the node.
-    - Instructions:
-      1. Base case: check for presence of root node
-      2. Visit root node and put it in a queue (D)
-      3. Get any child references it may have and enqueue them after the root node
-      4. Dequeue the root node. Repeat with the first node in the queue until the queue is empty/there are no more child nodes to enqueue.
-    - Code:
+      - Goes across each level from left to right, visiting each node at that level, before going down.
+      - Each node contains the references to its left and right child. To enable breadth traversal, you have to ask each parent node to give you the references (discovered nodes) before you start moving to its left child, or else you won't know where to find the right child.
+      - Big(O):
+        - Time complexity is linear time `O(n)` since we only visit each node in the queue once, so the total amount of time is proprotional to the number of nodes in the queue.
+        - Space complexity is proportional to the max width of the tree `O(w)`
+      - Uses:
+        - Finding the shortest path between two nodes, GPS navigation, peer2peer networks, social networks etc. that all require you to find neighbouring nodes.
+        - Also useful if you have a lot of data but are not exactly sure where the node you're looking for is located. You could begin with BFS to explore and once you find the right "neighbourhood", use DFS to retrieve the node.
+      - Instructions:
+        1. Base case: check for presence of root node
+        2. Visit root node and put it in a queue (D)
+        3. Get any child references it may have and enqueue them after the root node
+        4. Dequeue the root node. Repeat with the first node in the queue until the queue is empty/there are no more child nodes to enqueue.
+       - Code:
       ```ruby
         def level_order_search(root)
           return if root == null
