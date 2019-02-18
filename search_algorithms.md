@@ -114,7 +114,7 @@ Example of a tree node:
 
 3. Dijkstra's Algorithm
     - It finds the shortest distance between two nodes in a weighted graph.
-    - BFS can be viewed as a special case of Dijkstra's algorithm but on an unweighted graph since BFS uses a FIFO queue instead of a Priority Queue. BFS fans out uniformly in its search whereas Dijkstra's prioritizes which paths to explore based on their weights/costs (e.g. distance, road vs. forest etc.).
+    - BFS can be viewed as a special case of Dijkstra's algorithm but on an unweighted graph since BFS uses a regular queue instead of a Priority Queue. BFS fans out uniformly in its search whereas Dijkstra's prioritizes which paths to explore based on their weights/costs (e.g. distance, road vs. forest etc.).
     - Big(O):
       - Time complexity is `O(E VlogV)` where `E` = total no. of edges and `V` = total no. of vertices/nodes. It's very fast.
     - Uses:
