@@ -64,22 +64,15 @@
       - Uses: Quick sort uses up less space than merge sort and works with internal memory but it is unstable, so if maintaining the pre-sorted order of elements is important, use merge sort. Also, use quick sort if you're sure the data will always be unsorted. Quick sort is used in Node.js sort method and browsers like V8. 
       - Code:
         ```ruby
-          def quick_sort(a, left_index, right_index)
-            return a if a.length <= 1
-
-            pivot_index = partition(a, left_index, right_index)
-
-            # if left_index has not reached pivot, keep sorting
-            if left_index < pivot_index - 1
-              quick_sort(a, left_index, pivot_index - 1)
-            end
-
-            # if right_index has not reached pivot, keep sorting
-            if pivot_index < right_index
-              quick_sort(a, pivot_index, right_index)
-            end
-
-            return a
+          def quick_sort(a)
+            return [] if a.empty?
+            
+            pivot = a.delete_at(rand(a.length))
+            
+            # use ruby's partition method to sort the elements
+            left, right = a.partition {|i| i < pivot}
+            
+            return [quick_sort(left), pivot, quick_sort(right)].flatten
           end
         ```
 
